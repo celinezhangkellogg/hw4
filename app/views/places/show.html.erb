@@ -1,16 +1,26 @@
+<div class = "container">
+
+
 <h1><%= @place["name"] %></h1>
 
-<h2>My Entries</h2>
+<p class="new">
+  <a href="/entries/new?place_id=<%= @place["id"] %>">New Post</a>
+</p>
+
+
+<div class = "column">
 <% for entry in @entries %>
-  <h3><%= entry["title"] %></h3>
-  <h4><%= entry["occurred_on"] %></h4>
-  <p><%= entry["description"] %></p>
+
+  <div class = "col-md-4"><%= entry["title"] %></div>
+  <div class = "col-md-4"><%= entry["occurred_on"] %></div>
+  <div class = "col-md-4"><%= entry["description"] %></div>
+
 <% end %>
 
-<p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
-</p>
+</div>
 
 <p>
   <a href="/places">Back to All Places</a>
 </p>
+
+</div>

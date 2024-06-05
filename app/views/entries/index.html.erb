@@ -1,0 +1,11 @@
+<div class = "container">
+
+
+<% for entry in @entries%>
+<% user = User.find_by({“id”=> entry[“user_id”]})%>
+
+<%= user[“username”]%>
+
+<%end%>
+
+</div>

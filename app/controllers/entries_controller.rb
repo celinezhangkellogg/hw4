@@ -1,5 +1,9 @@
 class EntriesController < ApplicationController
 
+  def show
+    @entry = Entry.order("id decs")
+  end
+
 
   def new
   end
