@@ -5,6 +5,11 @@
 <% user = User.find_by({“id”=> entry[“user_id”]})%>
 
 <%= user[“username”]%>
+<% if entry.uploaded_image.attached? %>
+<img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+ <% else %>
+  <img src="<%= entry["image"] %>" class="img-fluid">
+<% end %>
 
 <%end%>
 
