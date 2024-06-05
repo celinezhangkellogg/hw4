@@ -1,5 +1,14 @@
 class EntriesController < ApplicationController
 
+  def show
+   
+    # only show your own entries
+    @entries = Entry.where({ "contact_id" => @contact["id"] }, {"user_id" => session["user_id"]})
+
+  end
+
+
+
   def new
   end
 
